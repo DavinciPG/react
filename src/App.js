@@ -4,11 +4,25 @@ import './App.css';
 import ExpenseItem   from "./components/ExpenseItem";
 
 function App() {
-  return (
-    <div className="App">
-      <ExpenseItem></ExpenseItem>
-    </div>
-  );
+    const expenses = [
+        {
+            date: new Date(2023, 0, 10),
+            title: 'New book',
+            price: 30.99
+        },
+        {
+            date: new Date(2023, 0, 10),
+            title: 'New jeans',
+            price: 99.99
+        }
+    ]
+    return (
+        <div className="App">
+            {expenses.map((expense) => (
+                <ExpenseItem expenseData={expense}></ExpenseItem>
+            ))}
+        </div>
+    );
 }
 
 export default App;
